@@ -1,0 +1,19 @@
+.light {
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 100%;
+  background-color: #e7e7e7;
+}
+
+.red {
+  background-color: #dd1815;
+}
+
+.orange {
+  background-color: #e8931b;
+}
+
+.green {
+  background-color: #1db342;
+}
