@@ -1,17 +1,25 @@
-import React from 'react';
-import './button.css';
-import { Button as qdsButton } from "@quotalab/qds";
+import React from "react";
+
+import { Button as QdsButton } from "@quotalab/qds"
+import { container } from "../app.css"
+
 
 interface ButtonProps {
-  label?: string;
-  size?: string;
-  variant?: string;
+  label?: string,
+  primary?: boolean,
+  size?: "small" | "medium" | "large",
+  color?: "primary" | "secondary" | "tertiary" | "success" | "warning" | "danger"
+  backgroundColor?: "primary" | "secondary" | "tertiary" | "success" | "warning" | "danger"
+  borderRadius?: number
+  disabled?: boolean,
+  onClick?: () => void,
+  variant?: "primary" | "secondary" | "tertiary" | "success" | "warning" | "danger" | "outline"
 }
 
-export const Button: React.FC<ButtonProps> = ({ label, size, variant, ...props }) => {
-  return (
-    <div>
-      <qdsButton>{label}</qdsButton>
-    </div>
-  )
-}
+export const Button = ({ label, primary, size, color, backgroundColor, borderRadius, disabled, onClick, variant }: ButtonProps) => (
+  <QdsButton
+    className={container}
+    disabled={disabled}
+    onClick={onClick}
+  >{label}</QdsButton>
+);
